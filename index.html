@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(45deg, #ff4e50, #fc913a, #f9d423, #e1eec3);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            padding: 50px;
+            color: white;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hidden {
+            display: none;
+        }
+        .gift-icon {
+            font-size: 60px;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        video {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey my Valentine, this is for you 💖</h1>
+    <p>Click the gift below!</p>
+    <div class="gift-icon" onclick="revealGift()">🎁</div>
+    <div id="gift-content" class="hidden">
+        <video id="valentineVideo" src="vedio.mp4" controls autoplay muted></video>
+        <audio id="valentineSong" src="dd.mp3" autoplay loop></audio>
+    </div>
+    <p id="finalMessage" class="hidden">Hey NODE FOR U ....</p>
+    
+    <script>
+        function revealGift() {
+            document.getElementById("gift-content").classList.remove("hidden");
+            document.getElementById("finalMessage").classList.remove("hidden");
+            document.getElementById("valentineVideo").play();
+            document.getElementById("valentineSong").play();
+        }
+    </script>
+</body>
+</html>
